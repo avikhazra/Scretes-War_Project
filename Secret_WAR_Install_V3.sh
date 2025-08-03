@@ -1748,7 +1748,9 @@ REPORT_EOF
     if [[ -n "$results" ]]; then
         local total_issues=$(echo "$results" | wc -l | tr -d ' ')
         cat >> "$report_file" << ISSUES_EOF
-    <div class="warning">⚠️ OOPS! We Lost WAR..SECURITY VULNERABILITIES DETECTED ⚠️</div>
+        <div class="warning">⚠️ OOPS! We Lost WAR -- Doctor Doom Striked⚠️</div>
+       <div class="warning">⚠️ SECURITY VULNERABILITIES DETECTED ⚠️</div>
+       <div class="warning">⚠️ OOPS! We Lost WAR..SECURITY VULNERABILITIES DETECTED ⚠️</div>
     <div class="stats">
         <div>Issues Found: $total_issues</div>
         <div>Threads Used: $THREAD_POOL_SIZE</div>
@@ -1812,7 +1814,7 @@ main() {
         exit 0
     fi
     
-    echo -e "${BLUE}Doctor Scanning Vulnerabilities to Strike!!....Scanning.... ${#staged_files[@]} files with $THREAD_POOL_SIZE threads...${NC}"
+    echo -e "${BLUE}Victor von Doom is Scanning Vulnerabilities to Strike!!....Scanning.... ${#staged_files[@]} files with $THREAD_POOL_SIZE threads...${NC}"
     
     local start_time=$(date +%s)
     local results
